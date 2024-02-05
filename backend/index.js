@@ -1,6 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
-const config = require('../utils/config');
+const config = require('./utils/config');
 
 mongoose
 	.connect(config.MONGODB_URL)
