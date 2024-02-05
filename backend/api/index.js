@@ -1,4 +1,13 @@
-import express from 'express';
+const express = require('express');
+const mongoose = require('mongoose');
+const config = require('../utils/config');
+
+mongoose
+	.connect(config.MONGODB_URL)
+	.then(() => {
+		console.log('Connected to MongoDB');
+	})
+	.catch(err => console.error(err));
 
 const app = express();
 
