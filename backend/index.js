@@ -2,6 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const config = require('./utils/config');
 const usersRouter = require('./routes/user.route');
+const authRouter = require('./routes/auth.route');
 
 mongoose
 	.connect(config.MONGODB_URL)
@@ -20,3 +21,4 @@ app.listen(PORT, () => {
 });
 
 app.use('/api/user', usersRouter);
+app.use('/api/auth', authRouter);
