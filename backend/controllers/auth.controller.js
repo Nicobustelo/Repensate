@@ -21,7 +21,7 @@ const singup = async (req, res) => {
 			message: 'user created succesfully',
 		});
 	} catch (error) {
-		res.json(error.message);
+		next(error);
 	}
 };
 
