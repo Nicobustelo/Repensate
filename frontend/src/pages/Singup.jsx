@@ -1,10 +1,11 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 
 export default function Singup() {
 	const [formData, setFormdata] = useState({});
 	const [error, setError] = useState(false);
 	const [loading, setLoading] = useState(false);
+	const navigate = useNavigate();
 	const handleChange = event => {
 		setFormdata({ ...formData, [event.target.id]: event.target.value });
 	};
@@ -20,11 +21,9 @@ export default function Singup() {
 				body: JSON.stringify(formData),
 			});
 			const data = await res.json();
-			console.log(data, {
-				message: 'user created succesfully',
-			});
 			setLoading(false);
 			setError(false);
+			navigate('/sing-in');
 		} catch (error) {
 			setLoading(false);
 			setError(true);
