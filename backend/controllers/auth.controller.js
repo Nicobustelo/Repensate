@@ -7,7 +7,7 @@ const getAuth = async (req, res) => {
 	});
 };
 
-const singup = async (req, res) => {
+const singup = async (req, res, next) => {
 	const { email, username, password } = req.body;
 
 	const saltRounds = 10;
