@@ -8,15 +8,19 @@ import Header from './components/Header';
 
 export default function App() {
 	return (
-		<BrowserRouter>
-			<Header />
-			<Routes>
-				<Route path="/" element={<Home />} />
-				<Route path="/about" element={<About />} />
-				<Route path="/sing-in" element={<Singin />} />
-				<Route path="/sing-up" element={<Singup />} />
-				<Route path="/profile" element={<Profile />} />
-			</Routes>
-		</BrowserRouter>
+		<div className='bg-slate-50'>
+			<BrowserRouter>
+				<div className=' h-full'>
+					<Header />
+					<Routes>
+						<Route path="/" element={<Home />} />
+						<Route path="/about" element={<About />} />
+						<Route path="/sing-in" element={<Singin />} />
+						<Route path="/sing-up" element={<Singup />} />
+						<Route path="/profile" element={<Profile />} />
+					</Routes>
+				</ div>
+			</BrowserRouter>
+		</div>
 	);
 }
